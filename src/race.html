@@ -3,10 +3,12 @@ layout: layouts/base.html
 title: Latest Race Results
 ---
 
-<div class="text-white text-center flex justify-center mt-10 mb-5">{{title}}</div>
+<div class="text-white text-center flex justify-center mt-3 mb-3">{{title}}</div>
 
-<div class="">
-    <ul class="flex items-center flex-col gap-1">
+<h1 class="flex justify-center mb-1 underline text-lg text-red-500">{{raceName.Location.locality}} Grand Prix</h1>
+
+<div class="mx-auto max-w-96 p-3 border-2 border-red-500 flex justify-center shadow-xl bg-gray-900">
+    <ul class="flex flex-col gap-1">
     {% for result in race %}
         <li>
             {{result.position}} - {{result.Driver.givenName}} {{result.Driver.familyName}} (+{{result.points}}) |
@@ -19,3 +21,4 @@ title: Latest Race Results
     {% endfor %}
     </ul>
 </div>
+

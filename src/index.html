@@ -2,23 +2,23 @@
 layout: layouts/base.html
 title: Standings
 ---
-    <div class="text-white text-center flex justify-center mt-10">{{title}}</div>
+    <div class="text-white text-center flex justify-center mt-8 text-lg underline">{{title}}</div>
     
-    <div class="flex justify-between mt-10 w-full px-20">
-        <div class="flex-1 flex flex-col items-center">
-            <div class="mb-4">Constructors Standings</div>
+    <div class="flex justify-between mt-8 w-full px-20">
+        <div class="flex-1 flex flex-col items-center border-solid border-2 border-red-500 bg-gray-900 max-w-xl p-3">
+            <div class="mb-4 text-white underline">Constructors Standings</div>
             <ul class="flex items-center flex-col gap-7">
                 {% for constructor in constructors %}
-                    <li>{{constructor.position}} - <a href="{{constructor.url}}" target="_blank">{{constructor.Constructor.name}}   </a> ({{constructor.Constructor.nationality}}) - {{constructor.points}} Points - {{constructor.wins}} Wins</li>
+                    <li>{{constructor.position}} - <a class="underline" href="{{constructor.Constructor.url}}" target="_blank">{{constructor.Constructor.name}}   </a> ({{constructor.Constructor.nationality}}) - {{constructor.points}} Points - {{constructor.wins}} Wins</li>
                 {% endfor %}
             </ul>   
         </div>
         
-        <div class="flex-1 flex flex-col items-center">
-            <div class="mb-4">Drivers Standings</div>
+        <div class="flex-1 flex flex-col items-center border-solid border-2 border-red-500 bg-gray-900 max-w-xl p-3">
+            <div class="mb-4 text-white underline">Drivers Standings</div>
             <ul class="flex items-center flex-col">
                 {% for driver in drivers %}
-                    <li>{{driver.position}} - <a href="{{driver.Driver.url}}" target="_blank">{{driver.Driver.givenName}} {{driver.Driver.familyName}}</a> ({{driver.Driver.nationality}}) - {{driver.Constructors[0].name}} - {{driver.points}} Points - {{driver.wins}} Wins</li>
+                    <li>{{driver.position}} - <a class="underline" href="{{driver.Driver.url}}" target="_blank">{{driver.Driver.givenName}} {{driver.Driver.familyName}}</a> - {{driver.Constructors[0].name}} - {{driver.points}} Points - {{driver.wins}} Wins</li>
                 {% endfor %}
             </ul>   
         </div>

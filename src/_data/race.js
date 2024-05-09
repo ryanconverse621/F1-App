@@ -1,7 +1,7 @@
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
 async function getRaceResults() {
-    const url = "http://ergast.com/api/f1/2024/last/results.json";
+    const url = "http://ergast.com/api/f1/current/last/results.json";
     const response = await EleventyFetch(url, {
         duration: "1d",
         type: "json"

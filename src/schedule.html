@@ -3,9 +3,9 @@ layout: layouts/base.html
 title: 2024 Season Race Schedule
 ---
 
-<div class="text-white text-center flex justify-center mt-10 mb-5">{{title}}</div>
+<div class="text-white text-center flex justify-center mt-5 mb-5">{{title}}</div>
 
-<div class="">
+<div class="mx-auto max-w-2xl p-3 border-2 border-red-500 flex justify-center shadow-xl bg-gray-900">
     <ul class="flex items-center flex-col">
     {% for races in schedule %}
         <li>
