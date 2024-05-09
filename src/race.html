@@ -1,0 +1,21 @@
+---
+layout: layouts/base.html
+title: Latest Race Results
+---
+
+<div class="text-white text-center flex justify-center mt-10 mb-5">{{title}}</div>
+
+<div class="">
+    <ul class="flex items-center flex-col gap-1">
+    {% for result in race %}
+        <li>
+            {{result.position}} - {{result.Driver.givenName}} {{result.Driver.familyName}} (+{{result.points}}) |
+            {% if result.Time and result.Time.time %}
+                {{result.Time.time}}
+            {% else %}
+                DNF
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+</div>

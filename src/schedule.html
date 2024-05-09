@@ -1,0 +1,16 @@
+---
+layout: layouts/base.html
+title: 2024 Season Race Schedule
+---
+
+<div class="text-white text-center flex justify-center mt-10 mb-5">{{title}}</div>
+
+<div class="">
+    <ul class="flex items-center flex-col">
+    {% for races in schedule %}
+        <li>
+            {{races.round}} - {{races.raceName}} - {{races.Circuit.circuitName}} - {{races.date}}
+        </li>
+    {% endfor %}
+    </ul>
+</div>
